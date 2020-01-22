@@ -1,0 +1,24 @@
+body {
+    height: 2000px;
+  }
+  
+  div {
+    border: 2px black solid;
+    height: 100px;
+    width: 100px;
+    margin: 2px;
+    text-align: center;
+    line-height: 100px;
+    /* display: inline-block; */
+  }
+  
+  #one {
+  /*   position: relative; */
+    /* position: fixed; */
+  /*   position: absolute; */
+    top: 115px;
+  }
+  
+  #two {
+    position: fixed;
+  }
