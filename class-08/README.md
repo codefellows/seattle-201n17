@@ -1,6 +1,22 @@
-# HTML Forms and JS Events
+# More Topics in CSS Layout
 
 ## Today's Schedule
+
+### Feedback
+
+### Good
+
+- Enjoyed Code Review!
+- Classmates are awesome!
+
+### The Not So Good
+
+- Missing Adriana!
+
+### The Ugly
+
+- Salmon Cookies!
+- Need more DOM!
 
 ### **Learning Objectives**
 
