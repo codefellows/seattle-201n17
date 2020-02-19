@@ -14,9 +14,6 @@ var sectionEl = document.getElementById('image-container');
 
 
 var allMovies = [];
-var chartNames = ['EP1', 'EP2'];
-var chartVotes = [5,10];
-var totalClicks = 10;
 
 function StarWarsMovies(src, alt, title){
     this.src = src;
