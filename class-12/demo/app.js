@@ -4,16 +4,10 @@ var imageOneEl = document.getElementById('picture1');
 var imageTwoEl = document.getElementById('picture2');
 var sectionEl = document.getElementById('image-container');
 
-// imageOneEl.src = 'img/starwars1.jpg';
-// imageOneEl.alt = 'starwars1';
-// imageOneEl.title = "starwars1";
-
-// imageTwoEl.src = 'img/starwars2.jpg';
-// imageTwoEl.alt = 'starwars2';
-// imageTwoEl.title = 'starwars3';
-
-
+var totalClicks = 25;
 var allMovies = [];
+var chartNames = [];
+var numberArray = [];
 
 function StarWarsMovies(src, alt, title){
     this.src = src;
@@ -22,7 +16,7 @@ function StarWarsMovies(src, alt, title){
     this.clicked = 0;
     this.viewed = 0;
 
-    // chartNames.push(this.title);
+    chartNames.push(this.title);
     allMovies.push(this);
 }
 
@@ -50,13 +44,66 @@ function imageGenerator(){
 
 function handelClick(e) {
     var clickedMovie = e.target.title;
+    totalClicks--;
     for(var i =0; i < allMovies.length; i++){
         if(clickedMovie === allMovies[i].title){
             allMovies[i].clicked++;
         }
     }
-    totalClicks--;
-    imageGenerator();
+    if(totalClicks > 0) {
+        imageGenerator();
+    } else {
+        sectionEl.removeEventListener;
+        addChartData();
+        renderChart();
+    }
+
+}
+
+function addChartData(){
+    for(var i = 0; i < allMovies.length; i++){
+        numberArray.push(allMovies[i].clicked);
+    }
+}
+
+function renderChart(){
+    var ctx = document.getElementById('my_data');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: chartNames,
+            datasets: [{
+                label: '# of Votes',
+                data: numberArray,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
 }
 
 function populateData(){
