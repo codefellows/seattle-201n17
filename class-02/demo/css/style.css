@@ -1,0 +1,22 @@
+body {
+    background-color: bisque;
+}
+ul {
+    background-color: orange;
+}
+
+/* body {
+    background-color: blue;
+} */
+
+#odd {
+   font-weight: bold; 
+}
+
+.even {
+    font-weight: bold;
+}
+
+.wrong {
+    color: red
+}

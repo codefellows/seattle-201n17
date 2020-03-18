@@ -1,0 +1,21 @@
+div {
+    border: 1px black solid;
+    padding: 10px;
+  /*   margin: 2px 10px 5px 12px; */
+  }
+  
+  #bottom {
+  /*   margin-top: 10px; */
+    margin: 10px 0px 20px 0px;
+  }
+  span {
+    border: 2px blue solid;
+    margin: 5px 5px;
+    padding: 10px;
+    display: block;
+  }
+  
+  #right {
+    position: absolute;
+    margin: 190px;
+  }
